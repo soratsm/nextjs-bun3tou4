@@ -1,14 +1,22 @@
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react';
+import { GoogleAnalytics, usePageView } from '@src/lib/gtag';
+import theme from '@src/theme/theme';
+import { AppProps } from 'next/app';
+import { RecoilRoot } from 'recoil';
 
-import theme from '../theme'
-import { AppProps } from 'next/app'
-
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp: React.FC<AppProps> = (props) => {
+  const { Component, pageProps } = props;
+  usePageView();
   return (
-    <ChakraProvider resetCSS theme={theme}>
-      <Component {...pageProps} />
-    </ChakraProvider>
-  )
-}
+    <>
+      <GoogleAnalytics />
+      <ChakraProvider resetCSS theme={theme}>
+        <RecoilRoot>
+          <Component {...pageProps} />
+        </RecoilRoot>
+      </ChakraProvider>
+    </>
+  );
+};
 
-export default MyApp
+export default MyApp;

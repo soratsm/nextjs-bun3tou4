@@ -1,33 +1,72 @@
-# Example app with [chakra-ui](https://github.com/chakra-ui/chakra-ui) and TypeScript
+# Portfolio
 
-This example features how to use [chakra-ui](https://github.com/chakra-ui/chakra-ui) as the component library within a Next.js app with TypeScript.
+## 対象
 
-Next.js and chakra-ui have built-in TypeScript declarations, so we'll get autocompletion for their modules straight away.
+* 超長期運用を目的としている20～50代の日本人
+* 具体的にはつみたてNISA（20年）・IDECO（60歳まで）を活用して資産運用する人に向けた投資情報
 
-We are connecting the Next.js `_app.js` with `chakra-ui`'s Provider and theme so the pages can have app-wide dark/light mode. We are also creating some components which shows the usage of `chakra-ui`'s style props.
+## 提供するもの
 
-## Deploy your own
+* 分散投資に活用できる情報
+  * 各種ETFの国ごとの分散
+  * 資産分散
+  * 会社分散
+* 各種ETFを活用したシミュレーション
+  * 資産クラスごとの相関係数を基に加重平均
+* 現状のポートフォリオの管理
+  * ユーザー情報の管理
+* シミュレーションとポートフォリオを比較したリバランス内容の整理
+* 忘れた頃に見たい投資の考えをブログとして投稿
+  * 現代ポートフォリオ理論の図とその説明など
+  * どの証券口座がお得かなど（アフィリエイト）
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-chakra-ui-typescript)
+## 技術構成
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-chakra-ui-typescript&project-name=with-chakra-ui-typescript&repository-name=with-chakra-ui-typescript)
+### フロントエンド
 
-## How to use
+* NextJSによるETF情報のSSG
+  * 参照のしやすさ
+  * グラフ等での視覚化
+* シミュレーション
+  * 資産金額に応じてETF毎の投入金額
+* 自身のポートフォリオ管理
+  * 認証周りはFireAuthに任せる
+* ブログ
+  * マークダウンで記載して表示＆SSG
+* データの取得
+  * 自身で構築したバックエンドにaxiosで取得
+* ホスティングはVarcel
+* AtomicDesignによるコンポーネント構成
+* ChakraUIによる画面構築
 
-### Using `create-next-app`
+### バックエンド
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+* NestJSによる構築
+  * フロントともにTypeScriptで実装
+* シミュレーションはバックエンドでロジック
+* DBはMysqlでPrismaで操作
+* DockerでAWSあたりにホスティング
 
-```bash
-npx create-next-app --example with-chakra-ui-typescript with-chakra-ui-typescript-app
-# or
-yarn create next-app --example with-chakra-ui-typescript with-chakra-ui-typescript-app
-```
+### データ取得
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+* スクレイピングでデータ取得
+* 取得したデータを必要な形式に変換してMysqlに格納
+* 定期スケジューリングでデータの更新
 
-## Notes
+### logo
 
-Chakra has supported Gradients and RTL in `v1.1`. To utilize RTL, [add RTL direction and swap](https://chakra-ui.com/docs/features/rtl-support).
+* https://hatchful.shopify.com/
+* 上記で作成したLOGO.pngを下記に渡して生成
+* https://realfavicongenerator.net
 
-If you don't have multi-direction app, you should make `<Html lang="ar" dir="rtl">` inside `_document.ts`.
+### Analytics
+
+* https://qiita.com/y_kawase/items/8f1b5a303400a09c4923
+* ホスティングしたらもう一度Analyticsを実装
+* https://panda-program.com/posts/nextjs-google-analytics
+* https://zenn.dev/renshimosawa/articles/086f30b628c153
+
+### JSDoc
+
+* https://ics.media/entry/6789/
+* https://qiita.com/opengl-8080/items/a36679f7926f4cac0a81
