@@ -18,7 +18,7 @@ const Inquiry: React.FC<Props> = (props) => {
   const { answers, chats, onClickAnswer, isOpen, onClose } = useInquiry(dataset);
   return (
     <Layout title='問い合わせ'>
-      <Container maxW={'max-content'} minW={{ base: '100%', lg: '3xl' }} h={'max-content'}>
+      <Container w={{ base: '100%', lg: '3xl' }} h={'max-content'}>
         <Heading size='lg' p={2} m={2} borderBottom={'double'}>
           問い合わせ
         </Heading>

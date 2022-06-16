@@ -54,7 +54,7 @@ const ETFDetail: React.FC<Props> = (props) => {
             <SymbolBaseData explain={symbolDetail.explain} />
           </VStack>
         </Box>
-      </Container>{' '}
+      </Container>
       <VStack>
         <Tabs isFitted variant='enclosed'>
           <TabList mt='2em'>
@@ -73,7 +73,7 @@ const ETFDetail: React.FC<Props> = (props) => {
               <SymbolSectionTable section={symbolDetail.section} />
             </TabPanel>
           </TabPanels>
-        </Tabs>{' '}
+        </Tabs>
       </VStack>
       <Text>{`データ取得日 : ${symbolDetail.update_at}`}</Text>
     </Layout>
