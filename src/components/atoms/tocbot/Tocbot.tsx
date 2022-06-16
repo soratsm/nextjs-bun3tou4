@@ -1,6 +1,6 @@
 import { Box, Flex, Text, useColorModeValue } from '@chakra-ui/react';
 import { memo, useEffect } from 'react';
-import { BiBookContent } from 'react-icons/Bi';
+import { FiBookOpen } from 'react-icons/fi';
 import tocbot from 'tocbot';
 
 export const Tocbot: React.FC = () => {
@@ -30,7 +30,7 @@ export const Tocbot: React.FC = () => {
         maxW={{ base: 'md', md: 'xl' }}
       >
         <Flex justify={'center'} alignItems={'center'} borderBottom={'2px'}>
-          <BiBookContent />
+          <FiBookOpen />
           <Text pl={1} fontWeight={'bold'}>
             もくじ
           </Text>
