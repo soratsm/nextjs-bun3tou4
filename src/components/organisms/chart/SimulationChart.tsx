@@ -33,11 +33,11 @@ const SimulationChart: React.FC<Props> = (props) => {
       props;
     const sin = Math.sin(-RADIAN * midAngle);
     const cos = Math.cos(-RADIAN * midAngle);
-    const sx = cx + (outerRadius + 10) * cos;
-    const sy = cy + (outerRadius + 10) * sin;
-    const mx = cx + (outerRadius + 30) * cos;
-    const my = cy + (outerRadius + 30) * sin;
-    const ex = mx + (cos >= 0 ? 1 : -1) * 22;
+    const sx = cx + (outerRadius + 3) * cos;
+    const sy = cy + (outerRadius + 3) * sin;
+    const mx = cx + (outerRadius + 10) * cos;
+    const my = cy + (outerRadius + 10) * sin;
+    const ex = mx + (cos >= 0 ? 1 : -1) * 7;
     const ey = my;
     const textAnchor = cos >= 0 ? 'start' : 'end';
     const nameSplit: string[] = payload.name.split(/ |-/g);
@@ -64,8 +64,8 @@ const SimulationChart: React.FC<Props> = (props) => {
           cy={cy}
           startAngle={startAngle}
           endAngle={endAngle}
-          innerRadius={outerRadius + 6}
-          outerRadius={outerRadius + 10}
+          innerRadius={outerRadius + 3}
+          outerRadius={outerRadius + 6}
           fill={fill}
         />
         <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill='none' />
@@ -143,7 +143,7 @@ const SimulationChart: React.FC<Props> = (props) => {
 
   return (
     <Center>
-      <PieChart width={450} height={250}>
+      <PieChart width={350} height={250}>
         <Pie
           activeIndex={activeIndex}
           activeShape={renderActiveShape}

@@ -40,7 +40,6 @@ const SFlex: React.FC<FlexProps> = (props) => {
       borderBottomColor={'borderAccent1'}
       minWidth='max-content'
       alignItems='center'
-      gap='2'
       {...props}
     />
   );

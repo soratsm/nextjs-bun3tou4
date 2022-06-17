@@ -12,6 +12,7 @@ const ShareCopyButton: React.FC<Props> = (props) => {
   const { onCopy } = useClipboard(url);
   const onClickCopy = () => {
     onCopy();
+    console.log(url)
     toast({
       title: 'クリップボードにコピーしました',
       status: 'success',

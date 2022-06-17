@@ -8,12 +8,14 @@ import {
   ShareRoundPocketButton,
   ShareRoundTwitterButton,
 } from '@src/components/atoms';
+import absoluteUrl from 'next-absolute-url';
 import { useRouter } from 'next/router';
 import { memo } from 'react';
 
 const ShareBox = () => {
+  const { origin } = absoluteUrl();
   const router = useRouter();
-  const url = router.asPath;
+  const url = origin + router.asPath;
   const title = process.env.NEXT_PUBLIC_TITLE;
   const size = 48;
   return (

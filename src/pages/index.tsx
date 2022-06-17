@@ -1,4 +1,4 @@
-import { Center, Image } from '@chakra-ui/react';
+import { Center, Img } from '@chakra-ui/react';
 import { Layout, Simulation } from '@src/components/templates';
 import { useAllSymbol } from '@src/hooks/useAllSymbol';
 import { TypeSymbolExplains } from '@src/types';
@@ -14,7 +14,7 @@ const Index: React.FC<Props> = (props) => {
   return (
     <Layout>
       <Center h={'fit-content'} bgColor={'sub3'}>
-        <Image w={700} src='images/logo_transparent.png' />
+        <Img src='images/logo_transparent.png' />
       </Center>
       <Simulation symbols={symbols} />
     </Layout>

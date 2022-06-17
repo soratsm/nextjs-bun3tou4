@@ -35,8 +35,7 @@ const InvestmentTable: React.FC<Props> = (props) => {
     useSimulationInvestment(props);
   const totalPer = useRecoilValue(SimulationTotalPer);
   const amount = useRecoilValue(SimulationAmount);
-  const isClearable = useBreakpointValue({ base: false, md: true });
-
+  const hiddenBreakpoint = useBreakpointValue({ base: true, md: false });
   return (
     <>
       <Center>
@@ -63,7 +62,7 @@ const InvestmentTable: React.FC<Props> = (props) => {
                         instanceId={`i${('000' + key).slice(-3)}`}
                         name={`i${('000' + key).slice(-3)}`}
                         defaultValue={item.id}
-                        isClearable={isClearable}
+                        isClearable
                         escapeClearsValue
                         menuPosition={'fixed'}
                         options={idOptions}
@@ -79,7 +78,9 @@ const InvestmentTable: React.FC<Props> = (props) => {
                     </Td>
                     <Td>
                       <HStack>
-                        <Button onClick={() => onClickPerButton(key, true)}>+</Button>
+                        <Button  hidden={hiddenBreakpoint} onClick={() => onClickPerButton(key, true)}>
+                          +
+                        </Button>
                         <NumberInput
                           size='sm'
                           w={20}
@@ -93,7 +94,9 @@ const InvestmentTable: React.FC<Props> = (props) => {
                           <NumberInputField />
                         </NumberInput>
                         <Text> %</Text>
-                        <Button onClick={() => onClickPerButton(key, false)}>-</Button>
+                        <Button hidden={hiddenBreakpoint} onClick={() => onClickPerButton(key, false)}>
+                          -
+                        </Button>
                       </HStack>
                     </Td>
                     <Td>{`${((Number(item.per) / 100) * amount * (item.yield_per / 100)).toFixed(
@@ -105,7 +108,9 @@ const InvestmentTable: React.FC<Props> = (props) => {
                   <Td>Other</Td>
                   <Td>
                     <HStack>
-                      <Button isDisabled={true}>+</Button>
+                      <Button  hidden={hiddenBreakpoint} isDisabled={true}>
+                        +
+                      </Button>
                       <NumberInput
                         size='sm'
                         w={20}
@@ -118,7 +123,9 @@ const InvestmentTable: React.FC<Props> = (props) => {
                         <NumberInputField />
                       </NumberInput>
                       <Text> %</Text>
-                      <Button isDisabled={true}>-</Button>
+                      <Button  hidden={hiddenBreakpoint} isDisabled={true}>
+                        -
+                      </Button>
                     </HStack>
                   </Td>
                   <Td>0.0 万円</Td>

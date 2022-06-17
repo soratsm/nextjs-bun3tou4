@@ -34,7 +34,7 @@ const SButton: React.FC<ButtonProps> = (props) => {
         bg: 'sub3',
         color: 'white',
       }}
-      size='lg'
+      size={{ base: 'md', md: 'lg' }}
       variant='ghost'
       {...props}
     />

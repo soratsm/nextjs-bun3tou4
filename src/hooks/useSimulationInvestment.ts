@@ -54,8 +54,8 @@ export const useSimulationInvestment = (props: Props) => {
   const onChangePer = (valueString: string, _: any, key: number) => {
     let tmpInvestmentList = [...investmentList];
     const ngRegexp = /\+|\-/;
-    if (ngRegexp.test(valueString) || valueString === '') {
-      tmpInvestmentList[key].per = '0.0';
+    if (ngRegexp.test(valueString) ) {
+      tmpInvestmentList[key].per = '0';
     } else {
       tmpInvestmentList[key].per = valueString;
     }

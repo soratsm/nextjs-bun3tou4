@@ -12,7 +12,7 @@ const SimulationTable: React.FC<Props> = (props) => {
   const { items, caption } = props;
 
   return (
-    <Box w={{ base: 'md', md: 'xl' }}>
+    <Box w={{ base: 'xs', md: 'xl' }}>
       {items.length ? (
         <>
           <TocH3>{caption}</TocH3>
