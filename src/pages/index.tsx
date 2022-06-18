@@ -14,7 +14,7 @@ const Index: React.FC<Props> = (props) => {
   return (
     <Layout>
       <Center h={'fit-content'} bgColor={'sub3'}>
-        <Img src='images/logo_transparent.png' />
+        <Img maxH={'500px'} src='images/logo_transparent.png' />
       </Center>
       <Simulation symbols={symbols} />
     </Layout>

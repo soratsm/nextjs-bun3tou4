@@ -40,7 +40,7 @@ const SymbolBaseData: React.FC<Props> = (props) => {
             {TdItems.map((td, index) => (
               <Tr key={index}>
                 <Td>{td.name}</Td>
-                <Td>{td.value as unknown as number}</Td>
+                <Td wordBreak={'break-word'}>{td.value as unknown as number}</Td>
               </Tr>
             ))}
           </Tbody>

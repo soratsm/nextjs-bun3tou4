@@ -12,7 +12,7 @@ const SymbolSectionTable: React.FC<Props> = (props) => {
   const caption = '投資対象分散（分野）';
 
   return (
-    <Box w={{ base: 'md', md: 'xl' }}>
+    <Box w={{ base: 'xs', md: 'xl' }}>
       {section.length ? (
         <>
           <TocH3>{caption}</TocH3>
@@ -28,7 +28,7 @@ const SymbolSectionTable: React.FC<Props> = (props) => {
                 {section.map((value, key) => (
                   <Tr key={key}>
                     <Td>{value.name}</Td>
-                    <Td wordBreak={'break-word'} minW={'100'}>
+                    <Td wordBreak={'break-word'} >
                       {value.per as unknown as number}
                     </Td>
                   </Tr>

@@ -1,15 +1,4 @@
-import {
-  Box,
-  Divider,
-  Table,
-  TableContainer,
-  Tbody,
-  Td,
-  Tfoot,
-  Th,
-  Thead,
-  Tr,
-} from '@chakra-ui/react';
+import { Box, Table, TableContainer, Tbody, Td, Tfoot, Th, Thead, Tr } from '@chakra-ui/react';
 import { SymbolCountry } from '@prisma/client';
 import { TocH3 } from '@src/components/atoms';
 import { useCalcTotal } from '@src/hooks/useCalcTotal';
@@ -23,7 +12,7 @@ const SymbolCountryTable: React.FC<Props> = (props) => {
   const caption = '投資対象分散（国）';
 
   return (
-    <Box w={{ base: 'md', md: 'xl' }}>
+    <Box w={{ base: 'xs', md: 'xl' }}>
       {country.length ? (
         <>
           <TocH3>{caption}</TocH3>

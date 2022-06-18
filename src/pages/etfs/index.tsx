@@ -30,7 +30,7 @@ const ETFs: React.FC<Props> = (props) => {
             onClick={onClickDelete}
           />
         </VStack>
-        <Divider p={2} m={2} borderBottom={'double'} />
+        <Divider py={2} my={2} borderBottom={'double'} />
         <Box display={{ base: 'none', md: 'block' }}>
           <SymbolsTable symbols={filteredSymbols} />
         </Box>

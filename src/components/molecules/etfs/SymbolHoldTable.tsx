@@ -12,7 +12,7 @@ const SymbolHoldTable: React.FC<Props> = (props) => {
   const caption = '主要投資銘柄';
 
   return (
-    <Box w={{ base: 'md', md: 'xl' }}>
+    <Box w={{ base: 'xs', md: 'xl' }}>
       {hold.length ? (
         <>
           <TocH3>{caption}</TocH3>
@@ -30,7 +30,7 @@ const SymbolHoldTable: React.FC<Props> = (props) => {
                   <Tr key={key}>
                     <Td>{value.holdId || '-'}</Td>
                     <Td>{value.name}</Td>
-                    <Td wordBreak={'break-word'} minW={'100'}>
+                    <Td wordBreak={'break-word'}>
                       {value.per as unknown as number}
                     </Td>
                   </Tr>
