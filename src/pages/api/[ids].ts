@@ -3,6 +3,10 @@ import { TypeSymbolDetail } from '@src/types';
 
 const prisma = new PrismaClient();
 
+/**
+ * 配列化してin句で取得
+ * @param req カンマ区切りの文字列
+ */
 export default async function handle(
   req: { query: { ids: string } },
   res: { json: (arg0: TypeSymbolDetail[]) => void },

@@ -30,9 +30,7 @@ const SymbolHoldTable: React.FC<Props> = (props) => {
                   <Tr key={key}>
                     <Td>{value.holdId || '-'}</Td>
                     <Td>{value.name}</Td>
-                    <Td wordBreak={'break-word'}>
-                      {value.per as unknown as number}
-                    </Td>
+                    <Td wordBreak={'break-word'}>{value.per as unknown as number}</Td>
                   </Tr>
                 ))}
               </Tbody>

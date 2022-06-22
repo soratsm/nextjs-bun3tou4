@@ -22,6 +22,9 @@ type Props = {
   onClose: () => void;
 };
 
+/**
+ * slackへ連携するためのフォーム
+ */
 const FormDialog: React.FC<Props> = (props) => {
   const { lastChat, isOpen, onClose } = props;
   const initialRef = useRef();

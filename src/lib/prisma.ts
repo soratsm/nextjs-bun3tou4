@@ -18,5 +18,8 @@ if (typeof window === 'undefined') {
   prisma = global.prisma;
 }
 
+/**
+ * Next.JS × Prismaのお約束
+ */
 export default prisma;
 export * from '@prisma/client';

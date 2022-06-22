@@ -7,6 +7,9 @@ type Props = (Questions & {
   answers: Answers[];
 })[];
 
+/**
+ * チャットボットとのやり取りを一つの仮想配列に見立て、追加していく
+ */
 export const useInquiry = (props: Props) => {
   const [answers, setAnswers] = useState<Answers[]>([]);
   const [answer, setAnswer] = useState('');
@@ -37,7 +40,7 @@ export const useInquiry = (props: Props) => {
         ];
         setChats(questionChats);
         setAnswers(props[passIndex].answers);
-      }, 500);
+      }, 300);
     }
   }, [currentId, props]);
 

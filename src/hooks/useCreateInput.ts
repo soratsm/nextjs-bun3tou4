@@ -8,7 +8,7 @@ type Props = {
 };
 
 /**
-    リストで作成されたデータをもとに
+    画面入力を基に出力情報に必要な形式に加工する
   */
 export const useCreateInput = (props: Props) => {
   const { investmentList } = props;
@@ -21,7 +21,9 @@ export const useCreateInput = (props: Props) => {
     fetcher,
   );
 
-  // idが空 又は perが0の行を削除しつつ、同一idを合算
+  /**
+   * idが空 又は perが0の行を削除しつつ、同一idを合算
+   */
   const organizeInvestmentList = async () => {
     let idArr: string[] = [];
     let organizeArr = [];
@@ -59,7 +61,6 @@ export const useCreateInput = (props: Props) => {
     return { idArr, organizeArr };
   };
 
-  // DBからin句で検索
   const onClickGenerate = async () => {
     const { idArr, organizeArr } = await organizeInvestmentList();
 

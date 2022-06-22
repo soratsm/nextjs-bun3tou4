@@ -9,6 +9,9 @@ type Props = {
   organizedInvestmentList: InvestmentItem[];
 };
 
+/**
+ * DBからin句で検索
+ */
 export const useCreateOutput = (props: Props) => {
   const { data, organizedInvestmentList } = props;
   const amount = useRecoilValue(SimulationAmount);

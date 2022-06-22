@@ -1,8 +1,10 @@
-// ChakraUIのリンクはNextLinkではないのでラッピングすることで使用する
 import { Link, LinkProps } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { memo } from 'react';
 
+/**
+ * ChakraUIのリンクはNextLinkではないのでラッピングすることで使用する
+ */
 const NextWrapLink: React.FC<LinkProps> = (props) => {
   const { href = '' } = props;
   return (

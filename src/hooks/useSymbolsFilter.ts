@@ -7,13 +7,16 @@ type serchLst = {
   serchValue: string;
 }[];
 
+/**
+ * 入力値を基に動的にリストを書き換え、インクリメント検索を実現
+ */
 const useSymbolsFilter = (props: Props) => {
   const { symbols } = props;
   const [keyword, setKeyword] = useState('');
-  // List 形式で表示するデータ。初期値では検索キーワードを入力していないので上で定義した
   const [filteredSymbols, setFilteredSymbols] = useState<TypeSymbolExplains>(symbols);
   const [searchListSymbols, setSearchListSymbols] = useState<serchLst>([]);
 
+  // 検索にヒットさせる文字列、名称やタグ、類似ETFも含める
   useEffect(() => {
     const tmpSerchList: serchLst = [];
     symbols.map((symbol) => {
@@ -40,7 +43,7 @@ const useSymbolsFilter = (props: Props) => {
       .toLowerCase()
       .match(/[^\s]+/g);
 
-    //入力されたキーワードが空白のみの場合
+    // 入力されたキーワードが空白のみの場合、全件表示
     if (searchKeywords === null) {
       setFilteredSymbols(symbols);
       return;

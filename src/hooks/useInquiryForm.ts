@@ -1,6 +1,9 @@
 import { useToast, UseToastOptions } from '@chakra-ui/react';
 import { useCallback, useState } from 'react';
 
+/**
+ * slack通知用のロジック
+ */
 export const useInquiryForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');

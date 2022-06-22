@@ -6,6 +6,7 @@ type Props = {
   description?: string;
   url?: string;
 };
+
 const PageHead: React.FC<Props> = (props) => {
   const { title, description, url } = props;
   return (

@@ -28,9 +28,7 @@ const SymbolSectionTable: React.FC<Props> = (props) => {
                 {section.map((value, key) => (
                   <Tr key={key}>
                     <Td>{value.name}</Td>
-                    <Td wordBreak={'break-word'} >
-                      {value.per as unknown as number}
-                    </Td>
+                    <Td wordBreak={'break-word'}>{value.per as unknown as number}</Td>
                   </Tr>
                 ))}
               </Tbody>

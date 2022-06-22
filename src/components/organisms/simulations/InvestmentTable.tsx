@@ -78,7 +78,10 @@ const InvestmentTable: React.FC<Props> = (props) => {
                     </Td>
                     <Td>
                       <HStack>
-                        <Button  hidden={hiddenBreakpoint} onClick={() => onClickPerButton(key, true)}>
+                        <Button
+                          hidden={hiddenBreakpoint}
+                          onClick={() => onClickPerButton(key, true)}
+                        >
                           +
                         </Button>
                         <NumberInput
@@ -94,7 +97,10 @@ const InvestmentTable: React.FC<Props> = (props) => {
                           <NumberInputField />
                         </NumberInput>
                         <Text> %</Text>
-                        <Button hidden={hiddenBreakpoint} onClick={() => onClickPerButton(key, false)}>
+                        <Button
+                          hidden={hiddenBreakpoint}
+                          onClick={() => onClickPerButton(key, false)}
+                        >
                           -
                         </Button>
                       </HStack>
@@ -108,7 +114,7 @@ const InvestmentTable: React.FC<Props> = (props) => {
                   <Td>Other</Td>
                   <Td>
                     <HStack>
-                      <Button  hidden={hiddenBreakpoint} isDisabled={true}>
+                      <Button hidden={hiddenBreakpoint} isDisabled={true}>
                         +
                       </Button>
                       <NumberInput
@@ -123,7 +129,7 @@ const InvestmentTable: React.FC<Props> = (props) => {
                         <NumberInputField />
                       </NumberInput>
                       <Text> %</Text>
-                      <Button  hidden={hiddenBreakpoint} isDisabled={true}>
+                      <Button hidden={hiddenBreakpoint} isDisabled={true}>
                         -
                       </Button>
                     </HStack>

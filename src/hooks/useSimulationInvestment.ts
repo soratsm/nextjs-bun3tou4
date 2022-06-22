@@ -15,6 +15,9 @@ interface IOption {
   value: string;
 }
 
+/**
+ * テーブルの画面入力や表示関わるロジックを提供
+ */
 export const useSimulationInvestment = (props: Props) => {
   const { symbols, investmentList, setInvestmentList } = props;
   const [idOptions, setIdOptions] = useState<IOption[]>([]);
@@ -54,7 +57,7 @@ export const useSimulationInvestment = (props: Props) => {
   const onChangePer = (valueString: string, _: any, key: number) => {
     let tmpInvestmentList = [...investmentList];
     const ngRegexp = /\+|\-/;
-    if (ngRegexp.test(valueString) ) {
+    if (ngRegexp.test(valueString)) {
       tmpInvestmentList[key].per = '0';
     } else {
       tmpInvestmentList[key].per = valueString;

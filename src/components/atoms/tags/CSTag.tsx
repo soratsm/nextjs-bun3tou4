@@ -5,6 +5,10 @@ type Props = {
   tags: string;
 };
 
+/**
+ * 配列化してタグ形式出力(空なら出力なし)
+ * @param tags カンマ区切りの文字列
+ */
 const CSTag: React.FC<Props> = (props) => {
   const { tags } = props;
   return <>{tags ? tags.split(/,/g).map((tag, key) => <STag key={key}>{tag}</STag>) : <></>}</>;
