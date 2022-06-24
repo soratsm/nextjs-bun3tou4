@@ -4,7 +4,7 @@ import { AnswersList, Chats, FormModal } from '@src/components/organisms';
 import { Layout } from '@src/components/templates';
 import { useInquiry } from '@src/hooks/useInquiry';
 import prisma from '@src/lib/prisma';
-import { GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 import { memo } from 'react';
 
 type Props = {
@@ -47,7 +47,7 @@ const Inquiry: React.FC<Props> = (props) => {
 
 export default memo(Inquiry);
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const dataset = await prisma.questions.findMany({
     where: {
       deleted: false,
@@ -63,6 +63,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   return {
     props: {
       dataset,
+      revalidate: 5,
     },
   };
 };
