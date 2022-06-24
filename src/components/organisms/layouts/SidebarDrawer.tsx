@@ -1,4 +1,4 @@
-import { Drawer, DrawerBody, DrawerContent, DrawerOverlay, DrawerProps } from '@chakra-ui/react';
+import { Drawer, DrawerBody, DrawerContent, DrawerProps } from '@chakra-ui/react';
 import { SideNavbar } from '@src/components/organisms';
 import { memo } from 'react';
 

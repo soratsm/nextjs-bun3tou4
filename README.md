@@ -10,7 +10,7 @@
 
 具体的には下記機能を提供しています。
 
-* 各種ETFの国・銘柄・分野ごとの分散状況を手軽に確認(静的サイトによる高速表示)
+* 各種ETFの国・銘柄・分野ごとの分散状況を手軽に確認（静的サイトによる高速表示）
 * ETFの組み合わせにおけるシミュレーション機能
 
 今後の機能拡充として下記を検討していますが、ご意見等あれば大歓迎
@@ -23,7 +23,7 @@
 
 ### フロントエンド
 
-* Next.js(React派生)によるETF情報のSSG
+* Next.js（React派生）によるETF情報のSSG
 * 円グラフを用いた情報の視覚化
 * Supabaseからprismaやaxiosを使ったデータ取得
 * AtomicDesignによるコンポーネント構成
@@ -32,7 +32,7 @@
 
 ### [バックエンド](https://github.com/soratsm/nestjs-schedule-scraping)
 
-* NestJS(Express派生)によるTypeScript実装
+* NestJS（Express派生）によるTypeScript実装
 * Puppeteer(Headless Chrome)を用いたスクレイピング
 * Node Cronによるジョブ定期実行
 * Supabaseへprismaを使ったデータ格納
@@ -64,7 +64,7 @@
 
 ### ホスティング＆CI/CD
 
-* Next.JSとVercelの相性は流石によく。特に迷わず構築可能
+* Next.JSとVercelの相性は流石によく。とくに迷わず構築可能
 * バックエンドはHerokuとGitHub Actionsによる連携
   * 変数の受け渡しやスリープの対処など少し面倒くさい
   * ホスティングするタイミングで障害発生・・・
@@ -73,6 +73,13 @@
 ### ORM（Object-Relational Mapping）
 
 * [Prisma](https://www.prisma.io/docs/getting-started/quickstart)を使用
-  * DB定義やSQLイメージ、型ファイルの自動生成等、使い勝手は悪くはない。
-  * 但し、Next.JSのHot Reloadと相性は良くない印象
+  * DB定義やSQLイメージ、型ファイルの自動生成等、使い勝手は悪くない。
+  * ただし、Next.JSのHot Reloadと相性は良くない印象
 * その他にも種類豊富だが、学習コストは高くないので、色々試すのがいいと考える
+
+### PWA（Progressive Web Apps）
+
+* [next-pwa](https://www.npmjs.com/package/next-pwa)を使用
+  * manifestの生成:[Simicart](https://www.simicart.com/manifest-generator.html)あたりを使用してサクッと生成
+  * 『next.config.js』を追記
+  * 『.gitignore』を追記

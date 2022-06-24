@@ -12,7 +12,7 @@ const Index: React.FC<Props> = (props) => {
   const { symbols } = props;
 
   return (
-    <Layout>
+    <Layout description='ポートフォリオの分散を知ろう。 このアプリではETFの組み合わせから資産分散の実態を可視化できます。'>
       <Center h={'fit-content'} bgColor={'sub3'}>
         <Img maxH={'500px'} src='images/logo_transparent.png' />
       </Center>
