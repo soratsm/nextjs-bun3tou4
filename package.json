@@ -8,7 +8,7 @@
     "lint": "eslint \"{src,apps,libs,test}/**/*.{ts,tsx}\" --fix",
     "test": "jest --env=jsdom --verbose",
     "test:watch": "jest --watch",
-    "test:ci": "jest --ci"
+    "test:ci": "env NODE_ENV=test jest --ci"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.2",
