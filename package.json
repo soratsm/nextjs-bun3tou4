@@ -6,8 +6,7 @@
     "format": "prettier --write \"src/**/*.{ts,tsx}\" \"test/**/*.{ts,tsx}\"",
     "start": "next start",
     "lint": "eslint \"{src,apps,libs,test}/**/*.{ts,tsx}\" --fix",
-    "test": "jest --env=jsdom --verbose",
-    "test:watch": "jest --watch",
+    "test": "jest --watch",
     "test:ci": "env NODE_ENV=test jest --ci"
   },
   "dependencies": {
