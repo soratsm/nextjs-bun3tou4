@@ -6,9 +6,8 @@
     "format": "prettier --write \"src/**/*.{ts,tsx}\" \"test/**/*.{ts,tsx}\"",
     "start": "next start",
     "lint": "eslint \"{src,apps,libs,test}/**/*.{ts,tsx}\" --fix",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:cov": "jest --coverage"
+    "test": "jest --watch",
+    "test:ci": "jest --ci"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.2",
@@ -52,29 +51,9 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "jest": "^28.1.1",
+    "jest-environment-jsdom": "^28.1.1",
     "prettier": "^2.6.2",
     "prisma": "^3.15.1",
     "typescript": "4.7.3"
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "ts"
-    ],
-    "rootDir": "src",
-    "testRegex": ".*\\.spec\\.ts$",
-    "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
-    },
-    "collectCoverageFrom": [
-      "**/*.(t|j)s"
-    ],
-    "coverageDirectory": "../coverage",
-    "testEnvironment": "node",
-    "testPathIgnorePatterns": [
-      "<rootDir>/.next/",
-      "<rootDir>/node_modules/"
-    ]
   }
 }
