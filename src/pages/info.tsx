@@ -96,9 +96,7 @@ const Info = () => (
       <Text>
         ご指摘・ご質問やお仕事相談は、
         <SLink href='https://twitter.com/soratsm'>Twitter</SLink>
-        もしくは
-        <SLink href='https://www.yeskey.org/'>当方ブログ</SLink>
-        お問い合わせよりご連絡下さい。
+　　　　　　　　　　　　　よりご連絡下さい。
       </Text>
     </SBox>
   </Layout>
